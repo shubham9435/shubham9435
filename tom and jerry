@@ -1,0 +1,30 @@
+include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() 
+{ 
+    ios_base::sync_with_stdio(false); 
+    cin.tie(NULL);
+    long long int T, TS, result, ts, count, divisor, i;
+    cin >> T; 
+    for (i = 0;i<T;i++){
+        cin >> TS;
+        if (TS % 2 != 0){
+            result = TS/2;
+            cout << result<<'\n';
+        }
+        else{
+            ts = TS;
+            count = 0;
+            while (ts % 2 == 0){
+                ts = ts/2;
+                count ++;
+            }
+            count++;
+            divisor = pow(2,count);
+            result = TS/divisor;
+            cout << result<<'\n';
+        }
+    }
+}
